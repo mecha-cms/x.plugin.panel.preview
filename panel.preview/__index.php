@@ -1,7 +1,7 @@
 <?php
 
 Hook::set('shield.enter', function() use($language, $site, $url, $__path, $__state) {
-    if ($site->is === 'page' && Config::get('panel.view') === 'page' && strpos($__path . '/', '/+/') === false) {
+    if ($site->is === 'page' && Request::get('view', Config::get('panel.view')) === 'page' && strpos($__path . '/', '/+/') === false) {
         Asset::set(__DIR__ . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'panel.preview.min.css', 20);
         Asset::set(__DIR__ . DS . 'lot' . DS . 'asset' . DS . 'js' . DS . 'panel.preview.min.js', 20);
         Config::set('panel.m.t.preview', [

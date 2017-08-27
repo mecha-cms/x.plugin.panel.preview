@@ -13,7 +13,7 @@ Route::set('-preview/' . Guardian::token(), function() {
         $__path . '.page',
         $__path . '.archive'
     ], null);
-    $__NS = substr($__q, 0, strpos($__q, '/'));
+    $__NS = substr($__q, 0, strpos($__q . '/', '/'));
     $__any = new Page(null, [], $__NS);
     $__NS .= '.';
     $__type = Hook::fire($__NS . 'type', [Request::post('type', 'HTML'), [
