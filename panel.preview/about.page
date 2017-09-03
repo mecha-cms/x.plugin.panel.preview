@@ -3,7 +3,7 @@ title: Panel: Preview Tab
 description: Add quick preview tab to the page editor.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.0
+version: 1.1.0
 dependency: {"extension":["panel"]}
 ...
 

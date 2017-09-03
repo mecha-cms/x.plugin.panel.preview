@@ -14,16 +14,16 @@ Route::set('-preview/' . Guardian::token(), function() {
         $__path . '.archive'
     ], null);
     $__NS = substr($__q, 0, strpos($__q . '/', '/'));
-    $__any = new Page(null, [], $__NS);
+    $__any = new Page(null, [], ['*', $__NS]);
     $__NS .= '.';
-    $__type = Hook::fire($__NS . 'type', [Request::post('type', 'HTML'), [
+    $__type = Hook::fire(['*.type', $__NS . 'type'], [Request::post('type', 'HTML'), [
         'path' => $__path
     ], $__any, 'type']);
-    $__title = Hook::fire($__NS . 'title', [Request::post('title', null), [
+    $__title = Hook::fire(['*.title', $__NS . 'title'], [Request::post('title', null), [
         'path' => $__path,
         'type' => $__type
     ], $__any, 'title']);
-    $__content = Hook::fire($__NS . 'content', [Request::post('content', null), [
+    $__content = Hook::fire(['*.content', $__NS . 'content'], [Request::post('content', null), [
         'path' => $__path,
         'type' => $__type
     ], $__any, 'content']);
