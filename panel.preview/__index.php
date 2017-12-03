@@ -8,7 +8,7 @@ Hook::set('shield.enter', function() use($language, $site, $url, $__path, $__sta
             'content' => '<div id="panel-preview">' . $language->loading . '&#x2026;</div>',
             'attributes' => [
                 0 => [
-                    'data' => [
+                    'data[]' => [
                         'url' => $url . '/-preview/' . Guardian::token() . '?path=' . urlencode($__path)
                     ]
                 ]
